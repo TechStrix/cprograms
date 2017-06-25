@@ -1,0 +1,8 @@
+CC=gcc
+CFLAGiS=-I.
+DEPS=apue.h
+all: myfile.c
+%.o:%.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+myfile: myfile.o
+	gcc -o myfile myfile.o -I.
